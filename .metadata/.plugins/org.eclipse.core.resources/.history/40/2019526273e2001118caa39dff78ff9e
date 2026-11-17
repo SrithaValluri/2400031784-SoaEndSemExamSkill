@@ -1,0 +1,22 @@
+package controller;
+
+import org.springframework.web.bind.annotation.*;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/ms1")
+public class AdditionController {
+
+    @GetMapping("/add")
+    public Map<String, Object> add(
+            @RequestParam int a,
+            @RequestParam int b) {
+
+        int sum = a + b;
+
+        return Map.of(
+            "message", "addition",
+            "result", sum
+        );
+    }
+}
